@@ -1,7 +1,7 @@
 // === BACKEND: Updated userOrders Controller ===
 import orderModel from "../models/orderModel.js";
 
-const deliveryCharge = 50;
+
 
 const placeOrderCod = async (req, res) => {
   try {
