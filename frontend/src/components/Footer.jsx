@@ -6,7 +6,7 @@ const Footer = () => {
     <div>
         <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
             <div className=''>
-                <img src={assets.logo} className='mb-5 w-32' alt="" />
+                <img src={assets.crew1} className='mb-5 w-32' alt="" />
                 <p className='w-96 md:w-2/3 text-gray-600'>
                 Explore our café and discover the perfect harmony of comfort and creativity. Savor thoughtfully crafted beverages and bites that blend timeless flavors with a modern twist. Each visit is an invitation to unwind, connect, and enjoy quality moments in a space that feels like home—where tradition meets innovation, and every cup tells a story.
                 </p>
