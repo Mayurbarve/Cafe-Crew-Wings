@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './List.css'
-import { url, currency } from '../../assets/assets'
+import { currency } from '../../assets/assets'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const List = () => {
+
+  const url = import.meta.env.VITE_BACKEND_URL;
 
   const [list, setList] = useState([]);
 

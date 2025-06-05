@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Orders.css';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { assets, url, currency } from '../../assets/assets';
+import { assets, currency } from '../../assets/assets';
 
 const Order = () => {
+
+  const url = import.meta.env.VITE_BACKEND_URL;
   const [orders, setOrders] = useState([]);
 
   const fetchAllOrders = async () => {

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Add.css'
-import { assets, url } from '../../assets/assets';
+import { assets } from '../../assets/assets';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const Add = () => {
+
+    const url = import.meta.env.VITE_BACKEND_URL;
 
 
     const [image, setImage] = useState(false);
