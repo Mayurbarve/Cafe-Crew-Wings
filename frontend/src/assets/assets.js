@@ -23,12 +23,14 @@ import cross_icon from './cross_icon.png'
 import burger from './burger.jpg'
 import pizza from './pizza.jpg'
 import dessert from './dessert.jpg'
+import Mocktail from './Mocktail.jpg'
 
 import sandwitch from './sandwitch.jpg'
 import maggi from './maggi.jpg'
 import beverage from './beverage.jpg'
 import fries from './fries.jpg'
 import momos from './momos.jpg'
+import Rolls from './Rolls.jpg'
 
 
 import burger_img from './burger_img.png'
@@ -83,6 +85,8 @@ export const assets = {
     maggi,
     momos,
     sandwitch,
+    Mocktail,
+    Rolls,
 
     burger_img,
 
@@ -90,6 +94,7 @@ export const assets = {
     crew2,
 
     order_icon
+
 
 
 }

@@ -25,15 +25,16 @@ const Footer = () => {
             <div>
                 <p className='text-xl font-medium mb-5'>CONTACT WITH US</p>
                 <ul className='flex flex-col gap-1 text-gray-600'>
-                    <li>+91 8983399439</li>
-                    <li>mohadikarchandu123@gmail.com</li>
+                    <li>+91 8637756066</li>
+                    <li>cafecrewwings@gmail.com</li>
+                    <li><a href="https://www.instafram.com/cafe_crewwings">Instagram</a></li>
                 </ul>
             </div>
         </div>
 
         <div>
             <hr />
-            <p className='py-5 text-sm text-center'>Copyright 2024@ cafe-crew-wings.vercel.app - All Right Reserved.</p>
+            <p className='py-5 text-sm text-center'>Copyright 2025@ cafe-crew-wings.vercel.app - All Right Reserved.</p>
         </div>
     </div>
   )

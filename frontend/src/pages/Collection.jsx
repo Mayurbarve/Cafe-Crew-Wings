@@ -12,16 +12,22 @@ import fries from '../assets/fries.jpg';
 import maggi from '../assets/maggi.jpg';
 import momos from '../assets/momos.jpg';
 import pizza from '../assets/pizza.jpg';
+import Mocktail from '../assets/Mocktail.jpg';
+import Rolls from '../assets/Rolls.jpg';
 
 const menuItems = [
-  { name: 'Dessert', image: dessert },
+  { name: 'Deserts', image: dessert },
   { name: 'Sandwich', image: sandwitch },
-  { name: 'Beverage', image: beverage },
+  { name: 'Beverags', image: beverage },
+  { name: 'Mocktail', image: Mocktail },
   { name: 'Burger', image: burger },
   { name: 'Fries', image: fries },
-  { name: 'Maggie', image: maggi },
+  { name: 'Noodles', image: maggi },
   { name: 'Momos', image: momos },
-  { name: 'Pizza', image: pizza }
+  { name: 'Pizza', image: pizza },
+  // { name: 'Rolls', image: Rolls },
+  
+
 ];
 
 const Collection = () => {

@@ -10,7 +10,7 @@ const FreshMenu = () => {
 
   useEffect(() => {
     if (food_list && food_list.length > 0) {
-      setDishes(food_list.slice(0, 4)); // show first 4 dishes
+      setDishes(food_list.slice(0, 8)); // show first 4 dishes
     }
   }, [food_list]);
 
@@ -66,6 +66,7 @@ const FreshMenu = () => {
         </button>
         </Link>
       </div>
+      <hr className="mt-10 border-gray-200" />
     </div>
   );
 };

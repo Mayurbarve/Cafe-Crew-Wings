@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import dessert from '../assets/dessert.jpg';
 import sandwitch from '../assets/sandwitch.jpg';
@@ -40,6 +41,13 @@ const MenuExplore = () => {
             <span className="mt-3 text-gray-700 text-sm font-medium">{item.name}</span>
           </div>
         ))}
+      </div>
+      <div className="text-center mt-8">
+        <Link to="/collection">
+          <button className="bg-red-500 hover:bg-red-600 transition text-white px-6 py-2 rounded-full text-sm">
+            See All Dishes →
+          </button>
+        </Link>
       </div>
       <hr className="mt-10 border-gray-200" />
     </section>
