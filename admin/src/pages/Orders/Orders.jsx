@@ -5,9 +5,11 @@ import axios from 'axios';
 import { assets, currency } from '../../assets/assets';
 
 const Order = () => {
-
   const url = import.meta.env.VITE_BACKEND_URL;
   const [orders, setOrders] = useState([]);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [password, setPassword] = useState('');
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
 
   const fetchAllOrders = async () => {
     try {
@@ -38,19 +40,29 @@ const Order = () => {
     }
   };
 
-  const deleteOrder = async (orderId) => {
-    if (window.confirm("Are you sure you want to delete this order?")) {
+  const confirmDelete = (orderId) => {
+    setSelectedOrderId(orderId);
+    setShowConfirm(true);
+    setPassword('');
+  };
+
+  const handleDelete = async () => {
+    if (password === '5942') {
       try {
-        const response = await axios.delete(`${url}/api/order/delete/${orderId}`);
+        const response = await axios.delete(`${url}/api/order/delete/${selectedOrderId}`);
         if (response.data.success) {
           toast.success("Order deleted successfully");
-          fetchAllOrders(); // Refresh the list
+          fetchAllOrders();
         } else {
           toast.error("Failed to delete order");
         }
       } catch (error) {
         toast.error("Something went wrong while deleting order");
+      } finally {
+        setShowConfirm(false);
       }
+    } else {
+      toast.error("Incorrect password");
     }
   };
 
@@ -91,13 +103,43 @@ const Order = () => {
                   <option value="Completed">Completed</option>
                 </select>
               </p>
-              <button onClick={() => deleteOrder(order._id)} className="order-delete-btn">
+              <button onClick={() => confirmDelete(order._id)} className="order-delete-btn">
                 🗑 Delete
               </button>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Confirmation Modal */}
+      {/* Confirmation Modal */}
+      {/* Confirmation Modal */}
+      {showConfirm && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2 className="modal-title">Admin Confirmation</h2>
+            <p className="modal-instruction">
+              Please enter the 4-digit admin password to confirm deletion:
+            </p>
+
+            <input
+              type="password"
+              placeholder="Enter admin password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              maxLength={4}
+              className="modal-input"
+            />
+
+            <div className="modal-buttons">
+              <button className="confirm-btn" onClick={handleDelete}>Confirm</button>
+              <button className="cancel-btn" onClick={() => setShowConfirm(false)}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+
     </div>
   );
 };
