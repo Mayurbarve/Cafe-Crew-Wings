@@ -45,9 +45,14 @@ import order_icon from './order_icon.png'
 
 import crew_logo from './crew-logo.png'
 
-import head1 from './head-bg1.jpg'
-import head2 from './head-bg2.jpg'
-import head3 from './head-bg3.jpg'
+import head11 from './head-bg1.jpg'
+import head322 from './head-bg3.jpg'
+import head1 from './head-bg2.jpg'
+import head2 from './head2.jpg'
+import head3 from './head3.jpg'
+import head4 from './head4.jpg'
+import head5 from './head5.jpg'
+
 
 
 export const assets = {
@@ -75,6 +80,8 @@ export const assets = {
     head1,
     head2,
     head3,
+    head4,
+    head5,
 
     burger,
     dessert,

@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='relative z-50 bg-white px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32 py-5 shadow-sm flex items-center justify-between font-medium'>
+    <div className='relative z-50 bg-gray-100 rounded-b-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-32 py-5 shadow-sm flex items-center justify-between font-medium'>
       {/* Logo */}
       <Link to='/'>
         <img src={assets.crew1} className='w-40 sm:w-52 md:w-64' alt='Cafe Logo' />

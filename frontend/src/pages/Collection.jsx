@@ -49,7 +49,7 @@ const Collection = () => {
   }, [selectedCategory, food_list]);
 
   return (
-    <div className="pt-10 border-t">
+    <div className="pt-10 ">
       {/* MenuExplore Section */}
       <section className="py-10 px-4 max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold">

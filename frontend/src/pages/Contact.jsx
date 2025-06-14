@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div>
 
-      <div className='text-center text-2xl pt-10 border-t'>
+      <div className='text-center text-2xl pt-10'>
         <h2 className="text-3xl font-bold">
           Contact <span className="relative inline-block">
            Us

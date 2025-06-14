@@ -4,7 +4,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 const About = () => {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t">
+    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
       <div className="grid md:grid-cols-2 gap-10 lg:gap-20 items-center">
         
         {/* Left Side: Images */}
@@ -15,7 +15,7 @@ const About = () => {
 
           {/* Chef Image */}
           <img
-            src={assets.head2}
+            src={assets.head3}
             alt="Chef"
             className="relative z-10 w-56 h-48 sm:w-72 md:w-60 lg:w-[350px] rounded-full mt-6"
           />

@@ -9,10 +9,10 @@ const Home = () => {
   return (
     <div>
       <Hreo />
+      <hr className="mt-10 border-gray-200" />
       <MenuExplore />
       <LatestCollection/>
       {/* <BestSeller /> */}
-
       {/* <NewsletterBox /> */}
     </div>
   )
