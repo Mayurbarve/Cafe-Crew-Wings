@@ -9,9 +9,8 @@ const ShopContextProvider = (props) => {
   const [food_list, setFoodList] = useState([]);
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState("");
-  const [user, setUser] = useState({ email: "" }); // ✅ user state
+  const [user, setUser] = useState({ email: "" });
   const currency = "₹";
-
 
   const addToCart = async (itemId) => {
     setCartItems((prev = {}) => ({
@@ -75,12 +74,8 @@ const ShopContextProvider = (props) => {
       const response = await axios.get(`${url}/api/food/list`);
       const foodData = response.data.data;
 
-      const updatedData = foodData.map(item => ({
-        ...item,
-        image: `${url}/images/${item.image}`,
-      }));
-
-      setFoodList(updatedData);
+      // No need to modify image URLs anymore, they are already full URLs from Cloudinary
+      setFoodList(foodData);
     } catch (error) {
       console.error("Failed to fetch food list:", error);
     }
@@ -100,13 +95,13 @@ const ShopContextProvider = (props) => {
       await fetchFoodList();
 
       const localToken = localStorage.getItem("token");
-      const email = localStorage.getItem("email"); // ✅ get user email
+      const email = localStorage.getItem("email");
       if (localToken) {
         setToken(localToken);
         await loadCartData(localToken);
       }
       if (email) {
-        setUser({ email }); // ✅ set user
+        setUser({ email });
       }
     }
     loadData();
@@ -125,8 +120,8 @@ const ShopContextProvider = (props) => {
     setCartItems,
     currency,
     getCartCount,
-    user,           // ✅ added to context
-    setUser         // ✅ added to context
+    user,
+    setUser,
   };
 
   return (
