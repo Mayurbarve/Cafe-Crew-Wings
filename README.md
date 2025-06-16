@@ -16,14 +16,6 @@ www.cafecrewwings.in
 - **City/State:** Nagpur, Maharashtra – 440022
 
 ---
-
-## 🚀 Live Demo
-
-Deployed on **Vercel**  
-🌐 _[Demo Link Coming Soon]_  
-
----
-
 ## ⚙️ Tech Stack
 
 ### Frontend
@@ -36,15 +28,6 @@ Deployed on **Vercel**
 
 ### Database
 - MongoDB (via MongoDB Atlas or local instance)
-
-### Deployment
-- Frontend: Vercel  
-- Backend: Optional deployment via Render, Railway, or local
-
----
-
-
----
 
 ## 🧪 Features
 
