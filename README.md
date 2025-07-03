@@ -1,5 +1,6 @@
 # Cafe-Crew-Wings
 A full-stack café web application for Cafe Crew-wings in Nagpur
+www.cafecrewwings.in
 ![image](https://github.com/user-attachments/assets/3d7ee7b5-da47-4293-af3a-52b5dbaab9bd)
 
 **Cafe Crew-wings** is a full-stack café management and promotional web application built for a modern café experience, designed with a blend of traditional charm and contemporary tech. This application supports menu display, order management, customer interactions, and more.
@@ -15,14 +16,6 @@ A full-stack café web application for Cafe Crew-wings in Nagpur
 - **City/State:** Nagpur, Maharashtra – 440022
 
 ---
-
-## 🚀 Live Demo
-
-Deployed on **Vercel**  
-🌐 _[Demo Link Coming Soon]_  
-
----
-
 ## ⚙️ Tech Stack
 
 ### Frontend
@@ -35,15 +28,6 @@ Deployed on **Vercel**
 
 ### Database
 - MongoDB (via MongoDB Atlas or local instance)
-
-### Deployment
-- Frontend: Vercel  
-- Backend: Optional deployment via Render, Railway, or local
-
----
-
-
----
 
 ## 🧪 Features
 
