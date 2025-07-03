@@ -11,6 +11,10 @@ const Order = () => {
   const [password, setPassword] = useState('');
   const [selectedOrderId, setSelectedOrderId] = useState(null);
 
+  const [showHistoryPanel, setShowHistoryPanel] = useState(false);
+  const [historyOrders, setHistoryOrders] = useState([]);
+  const [filterTableNo, setFilterTableNo] = useState('');
+
   const fetchAllOrders = async () => {
     try {
       const response = await axios.get(`${url}/api/order/list`);
@@ -21,6 +25,19 @@ const Order = () => {
       }
     } catch (error) {
       toast.error("Something went wrong while fetching orders");
+    }
+  };
+
+  const fetchHistoryOrders = async () => {
+    try {
+      const response = await axios.get(`${url}/api/order/history`);
+      if (response.data.success) {
+        setHistoryOrders(response.data.data.reverse());
+      } else {
+        toast.error("Error fetching order history");
+      }
+    } catch (error) {
+      toast.error("Something went wrong while fetching history");
     }
   };
 
@@ -70,9 +87,22 @@ const Order = () => {
     fetchAllOrders();
   }, []);
 
+  useEffect(() => {
+    if (showHistoryPanel) {
+      fetchHistoryOrders();
+    }
+  }, [showHistoryPanel]);
+
   return (
     <div className='order add'>
       <h3>Orders</h3>
+      <div className="order-header">
+        <h3>Current Orders</h3>
+        <button onClick={() => setShowHistoryPanel(true)} className="history-btn">
+          📜 History
+        </button>
+      </div>
+
       <div className="order-list">
         {orders.map((order, index) => (
           <div key={index} className='order-item'>
@@ -112,8 +142,6 @@ const Order = () => {
       </div>
 
       {/* Confirmation Modal */}
-      {/* Confirmation Modal */}
-      {/* Confirmation Modal */}
       {showConfirm && (
         <div className="modal-overlay">
           <div className="modal">
@@ -139,7 +167,59 @@ const Order = () => {
         </div>
       )}
 
+      {/* Order History Panel */}
+      {showHistoryPanel && (
+        <div className="history-overlay">
+          <div className="history-panel">
+            <div className="history-header">
+              <h2>Order History</h2>
+              <button className="close-btn" onClick={() => setShowHistoryPanel(false)}>✖</button>
+            </div>
 
+            <input
+              type="number"
+              placeholder="Filter by Table Number"
+              value={filterTableNo}
+              onChange={(e) => setFilterTableNo(e.target.value)}
+              className="table-filter-input"
+            />
+
+            <div className="order-list">
+              {historyOrders
+                .filter(order =>
+                  filterTableNo === '' || order.customer.tableNo.toString() === filterTableNo
+                )
+                .map((order, index) => (
+                  <div key={index} className='order-item history'>
+                    <img src={assets.parcel_icon} alt="Parcel Icon" />
+                    <div className="order-details">
+                      <p className='order-item-food'>
+                        {order.items.map((item, index) => (
+                          <span key={index}>
+                            {item.name} x {item.quantity}
+                            {index !== order.items.length - 1 && ', '}
+                          </span>
+                        ))}
+                      </p>
+                      <p className='order-item-name'>
+                        {order.customer.firstName} ({order.customer.email})
+                      </p>
+                      <p className='order-item-phone'>
+                        📞 {order.customer.phone} | 🪑 Table No: {order.customer.tableNo}
+                      </p>
+                      <p className='order-item-amount'>
+                        Total: {currency}{order.amount}
+                      </p>
+                      <p className='order-item-status'>
+                        Status: {order.status}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
